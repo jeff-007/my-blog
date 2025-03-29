@@ -2,7 +2,8 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import './layout.css';
+// import './layout.css';
+import '../styles/layout.scss';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

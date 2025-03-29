@@ -1,18 +1,20 @@
-// 响应式设计混入
+@import 'variables';
+
+// 响应式设计
 @mixin mobile {
-  @media (width <= $breakpoint-md) {
+  @media (max-width: $breakpoint-sm) {
     @content;
   }
 }
 
 @mixin tablet {
-  @media (width > $breakpoint-md) and (width <= $breakpoint-lg) {
+  @media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
     @content;
   }
 }
 
 @mixin desktop {
-  @media (width > $breakpoint-lg) {
+  @media (min-width: $breakpoint-md) {
     @content;
   }
 }
@@ -63,4 +65,21 @@
   display: grid;
   grid-template-columns: repeat($columns, 1fr);
   gap: $gap;
+}
+
+// 三色渐变背景
+@mixin glass-gradient-three($opacity: 0.95) {
+  background: linear-gradient(to right, 
+    rgb(255 255 255 / $opacity) 0%,
+    rgb(243 244 246 / $opacity) 50%,
+    rgb(224 231 255 / $opacity) 100%
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+// Grid 布局
+@mixin grid-layout($columns: 1) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
 } 
