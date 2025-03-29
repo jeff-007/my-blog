@@ -1,0 +1,21 @@
+{
+    "singleQuote": true,
+    "trailingComma": "all",
+    "printWidth": 120,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": true,
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "endOfLine": "auto",
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": true,
+    "importOrderCaseInsensitive": true,
+    "insertPragma": false,
+    "requirePragma": false,
+    "proseWrap": "preserve",
+    "jsxSingleQuote": false,
+    "jsxBracketSameLine": false,
+    "parser": "babel"
+
+}
