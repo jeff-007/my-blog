@@ -1,0 +1,66 @@
+// 响应式设计混入
+@mixin mobile {
+  @media (width <= $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (width > $breakpoint-md) and (width <= $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (width > $breakpoint-lg) {
+    @content;
+  }
+}
+
+// 毛玻璃效果
+@mixin glass-effect($opacity: 0.5) {
+  background: rgba($color-white, $opacity);
+  backdrop-filter: blur(10px);
+  box-shadow: $shadow-sm;
+}
+
+// 渐变毛玻璃效果
+@mixin glass-gradient($start-color, $end-color, $opacity: 0.9) {
+  background: linear-gradient(
+    to right,
+    rgba($start-color, $opacity),
+    rgba($end-color, $opacity)
+  );
+  backdrop-filter: blur(10px);
+  box-shadow: $shadow-sm;
+}
+
+// 文本溢出省略
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 渐变背景
+@mixin gradient-bg($start-color, $end-color, $opacity: 1, $direction: 135deg) {
+  background: linear-gradient(
+    $direction,
+    rgba($start-color, $opacity) 0%,
+    rgba($end-color, $opacity) 100%
+  );
+}
+
+// Flex 布局居中
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Grid 布局
+@mixin grid-columns($columns: 2, $gap: $spacing-4) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+} 
